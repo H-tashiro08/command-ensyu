@@ -1,3 +1,6 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 import java.util.scanner;
 
 public class Main {
@@ -7,13 +10,28 @@ public class Main {
 double height = 158.6;
 double weight = 55.1;
 
- System.out.println("身長: " + height + "(cm)");
+ System.out.println("身長: " + aheight + "(cm)");
 
- System.out.println("体重:" + weight + "(kg)");
+ System.out.println("体重:" + aweight + "(kg)");
 
- double bmi = weight / (height * height);
+ double result = aweight / (aheight * aheight);
 
+ BigDecimal bmi = new BigDecimal(result);
+ bmi = bmi.setScale(2, RoundingMode.HALF_UP);
  System.out.println("あなたのBMI値は" + bmi + "です。");
+
+ double height = 152.0;
+ double weight = 45.1;
+
+ System.out.println("身長:" + bheight + "(cm)");
+
+ System.out.println("身長:" + bheight + "(cm)");
+
+ double bmi = bweight / (bheight * bheight);
+
+ BigDecimal bbmi = new BigDecimal(bresult);
+ bbmi = bbmi.setScale(2.RoundingMode.HALF_UP);
+ System.out.println("あなたのBMI値は" + bbmi + "です。");
 
  if(bmi >= 26.5) {
 	 System.out.println("肥満です");
