@@ -1,48 +1,60 @@
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-import java.util.scanner;
+import java.util.Scanner;
 
-public class Main {
- public static void main(String[] args)
+public class Bmi {
+	public static void main(String[] args) {
      Scanner scanner = new Scanner(System.in);
 
-double height = 158.6;
-double weight = 55.1;
+		double aheight = scanner.nextDouble();
+		double aweight = scanner.nextDouble();
 
- System.out.println("身長: " + aheight + "(cm)");
+ System.out.println("身長: " + aheight + "(m)");
 
  System.out.println("体重:" + aweight + "(kg)");
 
- double result = aweight / (aheight * aheight);
+ 
+ double bmi = aweight / (aheight * aheight);
 
- BigDecimal bmi = new BigDecimal(result);
- bmi = bmi.setScale(2, RoundingMode.HALF_UP);
- System.out.println("あなたのBMI値は" + bmi + "です。");
-
- double height = 152.0;
- double weight = 45.1;
-
- System.out.println("身長:" + bheight + "(cm)");
-
- System.out.println("身長:" + bheight + "(cm)");
-
- double bmi = bweight / (bheight * bheight);
-
- BigDecimal bbmi = new BigDecimal(bresult);
- bbmi = bbmi.setScale(2.RoundingMode.HALF_UP);
- System.out.println("あなたのBMI値は" + bbmi + "です。");
-
- if(bmi >= 26.5) {
-	 System.out.println("肥満です");
-} else if(bmi < 26.55 && bmi >= 24) {
-	System.out.println("太り気味です");
+ System.out.println("あなたのBMI値は" + String.format("%.2f",bmi) + "です。");
+		
+		if(bmi >= 26.5) {
+ System.out.println("肥満です");
+} else if(bmi < 26.5 && bmi >= 24) {
+System.out.println("太り気味です");
 } else if(bmi < 24 && bmi >=20 ){
-	System.out.println("普通です");
+System.out.println("普通です");
 } else if(bmi < 20 && bmi >= 0 ){
-	System.out.println("スリムです");
+System.out.println("スリムです");
 } else {
-	System.out.println("エラーです");
-		}
-	}
+System.out.println("エラーです");
+}
+		
+
+ double bheight = scanner.nextDouble();
+ double bweight = scanner.nextDouble();
+
+ System.out.println("身長:" + bheight + "(m)");
+
+ System.out.println("体重:" + bweight + "(kg)");
+
+ 
+ double bbmi = bweight / (bheight * bheight);
+		
+ System.out.println("あなたのBMI値は" + String.format("%.2f",bbmi) + "です。");
+
+
+ if(bbmi >= 26.5) {
+ System.out.println("肥満です");
+} else if(bbmi < 26.5 && bbmi >= 24) {
+System.out.println("太り気味です");
+} else if(bbmi < 24 && bbmi >=20 ){
+System.out.println("普通です");
+} else if(bbmi < 20 && bbmi >= 0 ){
+System.out.println("スリムです");
+} else {
+System.out.println("エラーです");
+}
+}
 }
